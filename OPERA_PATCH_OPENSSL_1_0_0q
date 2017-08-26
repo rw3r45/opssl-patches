@@ -6456,20 +6456,6 @@ index 1a66c57..ab23752 100644
  					buf_len--;
  					}
  				BUF_strlcpy(buf,bndec,buf_len);
-@@ -835,6 +838,7 @@ int OBJ_create_objects(BIO *in)
- 		}
- 	/* return(num); */
- 	}
-+#endif // !OPERA_SMALL_VERSION
- 
- int OBJ_create(const char *oid, const char *sn, const char *ln)
- 	{
-@@ -863,5 +867,3 @@ err:
- 	OPENSSL_free(buf);
- 	return(ok);
- 	}
--#endif // !OPERA_SMALL_VERSION
--
 diff --git a/modules/libopeay/crypto/objects/obj_xref.h b/modules/libopeay/crypto/objects/obj_xref.h
 index 5a79ed5..e81796d 100644
 --- a/modules/libopeay/crypto/objects/obj_xref.h
@@ -10228,16 +10214,15 @@ index 7c348f5..e488cef 100644
  
  	if (advapi)
  		{
-@@ -386,10 +330,8 @@ int RAND_poll(void)
+@@ -386,10 +332,10 @@ int RAND_poll(void)
          if (advapi)
  		FreeLibrary(advapi);
  
--	if (
--#ifndef OPERA_SMALL_VERSION
+	if (
+ #ifndef OPERA_SMALL_VERSION
 -		(osverinfo.dwPlatformId != VER_PLATFORM_WIN32_NT || !OPENSSL_isservice()) && 
--#endif
-+	if ((!check_winnt() ||
-+	     !OPENSSL_isservice()) &&
++		(!check_winnt() || !OPENSSL_isservice()) &&
+ #endif
  	    (user = LoadLibrary(TEXT("USER32.DLL"))))
  		{
  		GETCURSORINFO cursor;

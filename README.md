@@ -7,14 +7,17 @@ They were *(barely)* tested on 64bit GNU/Linux and most likely don't work on oth
 
 The Opera team has put a tremendous amount of work towards optimizing and securing their software. A proper patch aiming at upgrading bundled OpenSSL would take weeks, maybe months to make. This was made over a weekend, mostly using automated tools. These tools made terrible, terrible mistakes. The ones that made the compiler unhappy were fixed, many probably still remain. This patch probably **introduces more issues than respective OpenSSL versions fix**. You have been warned.
 
+Thanks to Phony Welder for debugging the 1.0.0 branch versions on Windows. They *shloud* compile now.
+
 ## Contents
 
 - **OPERA_PATCH_OPENSSL_1_0_0q**: This is the last version of OpenSSL 1.0.0 branch before a major code refactoring that broke absolutely everything in terms of automerging with Opera code. This is your safest bet if you want to try compiling for other platforms.
 - **OPERA_PATCH_OPENSSL_1_0_0t**: Most recent version of OpenSSL 1.0.0 branch.
+- **OPERA_PATCH_OPENSSL_1_0_1u**: Most recent version of OpenSSL 1.0.1 branch.
 
 ## The future
 
-I will probably continue this to OpenSSL 1.0.1, possibly 1.0.2; 1.1.0 or later seems highly unlikely. When (if) I'm done with that, there's still the challenge of implementing the new cipher suites in Operas' libssl, which probably won't happen either.
+I will probably continue this to OpenSSL 1.0.2; 1.1.0 or later seems highly unlikely. When (if) I'm done with that, there's still the challenge of implementing the new cipher suites in Operas' libssl, which probably won't happen either.
 
 ## Disclaimer
 
