@@ -1,0 +1,13 @@
+diff --git a/modules/libssl/cipher_list.h b/modules/libssl/cipher_list.h
+index 5cc9996..0481721 100644
+--- a/modules/libssl/cipher_list.h
++++ b/modules/libssl/cipher_list.h
+@@ -43,6 +43,6 @@ PREFIX_CONST_ARRAY(static, struct Cipher_spec, Cipher_ciphers, libssl)
+ 
+-	SSL_CIPHER_SPEC(0x00,0x04, RC4, MD5, RSA, S)				// 13
+-	SSL_CIPHER_SPEC(0x00,0x05, RC4, SHA, RSA, S)				// 14
++	//insecure SSL_CIPHER_SPEC(0x00,0x04, RC4, MD5, RSA, S)				// 13
++	//insecure SSL_CIPHER_SPEC(0x00,0x05, RC4, SHA, RSA, S)				// 14
+ 
+ #ifndef OPENSSL_NO_AES
+ 	SSL_CIPHER_SPEC(0x00,0x2F, AES_128, SHA, RSA, S)			// 15

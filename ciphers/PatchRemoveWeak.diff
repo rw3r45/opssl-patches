@@ -1,0 +1,19 @@
+diff --git a/modules/libssl/cipher_list.h b/modules/libssl/cipher_list.h
+index 5cc9996..03dc6e3 100644
+--- a/modules/libssl/cipher_list.h
++++ b/modules/libssl/cipher_list.h
+@@ -36,7 +36,7 @@ PREFIX_CONST_ARRAY(static, struct Cipher_spec, Cipher_ciphers, libssl)
+-	SSL_CIPHER_SPEC(0x00,0x0A, 3DES, SHA, RSA, S)				// 8
+-#ifdef __SSL_WITH_DH_DSA__
+-	SSL_CIPHER_SPEC(0x00,0x10, 3DES, SHA, DH, S)				// 9
+-	SSL_CIPHER_SPEC(0x00,0x16, 3DES, SHA, DHE, S)				// 10
+-	SSL_CIPHER_SPEC(0x00,0x0D, 3DES, SHA, DH_DSS, S)			// 11
+-	SSL_CIPHER_SPEC(0x00,0x13, 3DES, SHA, DHE_DSS, S)			// 12
+-#endif
++	//weak SSL_CIPHER_SPEC(0x00,0x0A, 3DES, SHA, RSA, S)				// 8
++//#ifdef __SSL_WITH_DH_DSA__
++	//weak SSL_CIPHER_SPEC(0x00,0x10, 3DES, SHA, DH, S)				// 9
++	//weak SSL_CIPHER_SPEC(0x00,0x16, 3DES, SHA, DHE, S)				// 10
++	//weak SSL_CIPHER_SPEC(0x00,0x0D, 3DES, SHA, DH_DSS, S)			// 11
++	//weak SSL_CIPHER_SPEC(0x00,0x13, 3DES, SHA, DHE_DSS, S)			// 12
++//#endif
